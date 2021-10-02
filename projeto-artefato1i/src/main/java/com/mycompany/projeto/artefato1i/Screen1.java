@@ -292,17 +292,23 @@ public class Screen1 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-    //A main (view) nao sabe da existencia da model. Portanto chamarei a 
-    //classe de controle para pegarmos os dados filtrados 
-        
+    //Logica da main:
     ControleComponente controle1 = new ControleComponente();
-    //controle1.setAll();
+   
+    //A looca nao consegue pegar dados condizentes do disk/mem 
     prgProc.setValue(controle1.getUsoAtualCpu().intValue());
     prgDisk.setValue(controle1.getUsoAtualDisco().intValue());
     prgMem.setValue(controle1.getUsoAtualRam().intValue());
     
+    lblUsoCpuMinVar.setText(controle1.getUsoMinCpu().toString());
+    lblUsoCpuVar.setText(controle1.getUsoMaxCpu().toString());
+    lblUsoDiskMinVar.setText(controle1.getUsoMinDisco().toString());
+    lblUsoDiskVar.setText(controle1.getUsoMaxDisco().toString());
+    lblUsoMemMinVar.setText(controle1.getUsoMinRam().toString());
+    lblUsoMemVar.setText(controle1.getUsoMaxRam().toString());
     
-       /*
+    
+    /* minhas metricas de alerta:
     70> Extremo
     50 - 69 - Moderado
     0 - 49 - Estável
