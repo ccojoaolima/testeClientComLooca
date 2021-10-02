@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="lblMaxMemFixa" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="lblUsoMemVar" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="lblUsoMemMinFixa" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="lblUsoMemMinVar" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="lblMediaMemFixa" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="lblMediaMem" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="prgDisk" min="-2" pref="372" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="lblAlertaDiskFixa" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="lblAlertaDisk" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="lblMaxDiskFixa" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="lblUsoDiskVar" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="lblUsoDiskMinFixa" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="lblUsoDiskMinVar" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="lblMediaDiscoFixa1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="lblMediaDisk" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="prgProc" min="-2" pref="372" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="lblAlertaCPUFixa" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="lblAlertaCPU" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="lblMaxCPUFixa" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="lblUsoCpuVar" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="lblUsoCpuMinFixa" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="lblUsoCpuMinVar" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+                              <Component id="lblMediaCPUFixa" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="lblDicaFixa" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="lblMediaProc" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Component id="jLabel4" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="prgMem" min="-2" pref="372" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="lblAlertaMemFixa" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="lblAlertaMem" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="lblCopyr" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="lblDicaFixa" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblMaxCPUFixa" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblUsoCpuVar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblUsoCpuMinFixa" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblUsoCpuMinVar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblMediaProc" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblMediaCPUFixa" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="prgProc" min="-2" pref="23" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblAlertaCPUFixa" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblAlertaCPU" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblMaxDiskFixa" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblUsoDiskVar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblUsoDiskMinFixa" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblUsoDiskMinVar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblMediaDiscoFixa1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblMediaDisk" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="prgDisk" min="-2" pref="23" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblAlertaDiskFixa" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblAlertaDisk" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="lblMaxMemFixa" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblUsoMemVar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblUsoMemMinFixa" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblUsoMemMinVar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblMediaMemFixa" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="lblMediaMem" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="prgMem" min="-2" pref="23" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="lblAlertaMemFixa" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="lblAlertaMem" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="lblCopyr" min="-2" max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="lblCopyr">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Copyright - Equipe Paymoon. e Bandtec 2021"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JProgressBar" name="prgMem">
+      <Properties>
+        <Property name="stringPainted" type="boolean" value="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Uso da Mem&#xf3;ria (%):"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JProgressBar" name="prgDisk">
+      <Properties>
+        <Property name="stringPainted" type="boolean" value="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Uso do disco (%): "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JProgressBar" name="prgProc">
+      <Properties>
+        <Property name="stringPainted" type="boolean" value="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel3">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Uso da CPU (%): "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Ler dados "/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblMaxCPUFixa">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Uso M&#xe1;ximo"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblUsoCpuVar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="xxx"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblUsoCpuMinFixa">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Uso M&#xed;nimo"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblUsoCpuMinVar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="xxx"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel4">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Tahoma" size="48" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="99" green="0" red="99" type="rgb"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="PayMoon"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblMaxDiskFixa">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Uso M&#xe1;ximo"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblUsoDiskVar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="xxx"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblUsoDiskMinFixa">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Uso M&#xed;nimo"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblUsoDiskMinVar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="xxx"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblMaxMemFixa">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Uso M&#xe1;ximo"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblUsoMemVar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="xxx"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblUsoMemMinFixa">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Uso M&#xed;nimo"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblUsoMemMinVar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="xxx"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblMediaProc">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="xxx"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblMediaCPUFixa">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Media Uso CPU:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblMediaDiscoFixa1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Media Uso Disco:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblMediaMemFixa">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Media Uso Disco:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblMediaDisk">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="xxx"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblMediaMem">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="xxx"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblAlertaCPUFixa">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="N&#xed;vel de Alerta:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblAlertaDiskFixa">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="N&#xed;vel de Alerta:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblAlertaMemFixa">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="N&#xed;vel de Alerta:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblAlertaCPU">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="null"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblAlertaDisk">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="null"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblAlertaMem">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="null"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblDicaFixa">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Dica:"/>
+      </Properties>
+    </Component>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTextArea" name="lblDica">
+          <Properties>
+            <Property name="columns" type="int" value="20"/>
+            <Property name="rows" type="int" value="5"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>
