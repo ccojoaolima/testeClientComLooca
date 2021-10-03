@@ -30,7 +30,8 @@ public class Componente {
   private Double menorUsoDisco = 0.0;
   private Double maiorUsoRam = 0.0;
   private Double menorUsoRam = 0.0;
-  
+  private Double usoMaxRam = 0.0;
+  private Double porcentagemUsoRam = 0.0;
   private Looca looca1 = new Looca();
   
   /*ArrayList <Integer> historicoValoresProc  = new ArrayList();
@@ -116,8 +117,16 @@ public class Componente {
     } 
     return this.menorUsoDisco;
     }
-
-   
+    
+    public Double getUsoMaxRam(){
+    usoMaxRam = looca1.getMemoria().getTotal().doubleValue();
+    return  this.usoMaxRam;
+    }
+    
+    public Double getPorcentagemUsoRam(){
+    porcentagemUsoRam = (getUsoRamAtual() * 100) / getUsoMaxRam();
+    return this.porcentagemUsoRam;
+    }
   
   }
   

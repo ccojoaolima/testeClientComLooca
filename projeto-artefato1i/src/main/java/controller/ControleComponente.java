@@ -13,9 +13,21 @@ public class ControleComponente {
     private Double usoAtualDisco = 0.0;
     private Double usoAtualRam = 0.0;
     private String nivelDeAlerta;
+    private Double porcentagemUsoRam = 0.0;
+    
     
 
     private Double usoMaxCpu;
+    private Double usoMaxRam;
+    /*
+    usoMaxRam - 100%
+    usoAtualCpu - X
+    usoMaxRam * X = usoAtualCpu * 100
+    private porcentagemUsoCpu = (usoAtualCpu * 100) / usoMaxRam
+    */
+
+    
+    
     //logica barrinha
     //controle de dados
     //quem gera dados - model
@@ -51,6 +63,13 @@ public class ControleComponente {
     public Double getUsoMinRam(){
     return componente1.getMenorUsoRam();
     }
+    
+    public Double getPorcentagemUsoRam(){
+    return componente1.getPorcentagemUsoRam();
+    }
+    
+    
+    
     public String getNivelDeAlertaCpu(){
     if(usoAtualCpu > 70){
     return "Extremo";

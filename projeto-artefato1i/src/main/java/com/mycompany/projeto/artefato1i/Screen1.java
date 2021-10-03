@@ -298,7 +298,7 @@ public class Screen1 extends javax.swing.JFrame {
     //A looca nao consegue pegar dados condizentes do disk/mem 
     prgProc.setValue(controle1.getUsoAtualCpu().intValue());
     prgDisk.setValue(controle1.getUsoAtualDisco().intValue());
-    prgMem.setValue(controle1.getUsoAtualRam().intValue());
+    prgMem.setValue(controle1.getPorcentagemUsoRam().intValue());
     
     lblUsoCpuMinVar.setText(controle1.getUsoMinCpu().toString());
     lblUsoCpuVar.setText(controle1.getUsoMaxCpu().toString());
