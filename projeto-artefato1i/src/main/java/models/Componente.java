@@ -31,7 +31,10 @@ public class Componente {
   private Double maiorUsoRam = 0.0;
   private Double menorUsoRam = 0.0;
   private Double usoMaxRam = 0.0;
+  private Double usoRestanteDisco = 0.0;
+  private Double tamanhoDisco = 0.0;
   private Double porcentagemUsoRam = 0.0;
+  private Double porcentagemUsoDisco = 0.0;
   private Looca looca1 = new Looca();
   
   /*ArrayList <Integer> historicoValoresProc  = new ArrayList();
@@ -54,9 +57,17 @@ public class Componente {
     DiscosGroup discos1 = looca1.getGrupoDeDiscos();
     List<Disco> listaDiscos1 = discos1.getDiscos();
     for (Disco disco : listaDiscos1) {
-    usoDiscoAtual = disco.getEscritas().doubleValue();
+    /*
+     tamanhoDisco               = 100%
+     tamanhoDisco - getEscritas = x%
+     tamanhoDisco * x = (tamanhoDisco - getEscritas) * 100;
+     porcentagemUsoDisco = ((tamanhoDisco - getEscritas) * 100) / tamanhoDisco;
+     */    
+    tamanhoDisco = disco.getTamanho().doubleValue();
+    usoRestanteDisco = tamanhoDisco - disco.getBytesDeEscritas();
+   
     }
-    return this.usoDiscoAtual;
+    return this.getUsoCpuAtual();
         
     }
     public Double getUsoRamAtual(){
@@ -128,6 +139,14 @@ public class Componente {
     return this.porcentagemUsoRam;
     }
   
+    public Double getPorcentagemUsoDisco(){
+    porcentagemUsoDisco = (usoRestanteDisco * 100 )/ tamanhoDisco;
+    return this.porcentagemUsoDisco;
+    }
+    
+     
+    
+    
   }
   
     

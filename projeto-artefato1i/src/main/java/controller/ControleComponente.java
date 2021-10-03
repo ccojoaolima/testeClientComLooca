@@ -68,7 +68,9 @@ public class ControleComponente {
     return componente1.getPorcentagemUsoRam();
     }
     
-    
+    public Double getPorcentagemUsoDisco(){
+    return componente1.getPorcentagemUsoDisco();
+    }
     
     public String getNivelDeAlertaCpu(){
     if(usoAtualCpu > 70){
