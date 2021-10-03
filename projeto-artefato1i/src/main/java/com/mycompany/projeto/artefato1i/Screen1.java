@@ -317,7 +317,7 @@ public class Screen1 extends javax.swing.JFrame {
     lblAlertaDisk.setText(controle1.getNivelDeAlertaDisco());
     lblAlertaMem.setText(controle1.getNivelDeAlertaRam());
  
-    
+    controle1.incluir();
     
       
     }//GEN-LAST:event_jButton1ActionPerformed

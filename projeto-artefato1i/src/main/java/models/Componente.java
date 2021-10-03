@@ -11,6 +11,7 @@ import com.github.britooo.looca.api.group.discos.DiscosGroup;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
+import org.apache.commons.dbcp2.BasicDataSource;
 
 /**
  *
@@ -35,18 +36,32 @@ public class Componente {
   private Double tamanhoDisco = 0.0;
   private Double porcentagemUsoRam = 0.0;
   private Double porcentagemUsoDisco = 0.0;
-  private Looca looca1 = new Looca();
   
+  private Looca looca1 = new Looca();
+  private BasicDataSource bd1 = new BasicDataSource();
+
   /*ArrayList <Integer> historicoValoresProc  = new ArrayList();
   ArrayList <Integer> historicoValoresDisk = new ArrayList();
   ArrayList <Integer> historicoValoresMem = new ArrayList();*/
    
   public Componente() {
-        this.usoCpuAtual = usoCpuAtual;
-        this.usoDiscoAtual = usoDiscoAtual;
-        this.usoRamAtual = usoRamAtual;
+    this.usoCpuAtual = usoCpuAtual;
+    this.usoDiscoAtual = usoDiscoAtual;
+    this.usoRamAtual = usoRamAtual;
+        
+    this.bd1 = new BasicDataSource();
+    bd1.setDriverClassName("org.h2.Driver");
+    bd1.setUrl("jdbc:h2:file:./meu_banco");
+    bd1.setUsername("sa");
+    bd1.setPassword("");
     }
     
+
+    public BasicDataSource getBancoDeDados() {
+        return bd1;
+    }
+    
+  
     public Double getUsoCpuAtual(){
      usoCpuAtual = looca1.getProcessador().getUso();  
      // usoCpuAtual = ThreadLocalRandom.current().nextDouble(0.0, 101.0)

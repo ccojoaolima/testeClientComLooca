@@ -1,6 +1,8 @@
 package controller;
 
 import models.Componente;
+import org.apache.commons.dbcp2.BasicDataSource;
+import org.springframework.jdbc.core.JdbcTemplate;
 
 /**
  *
@@ -15,10 +17,21 @@ public class ControleComponente {
     private String nivelDeAlerta;
     private Double porcentagemUsoRam = 0.0;
     
-    
+    private BasicDataSource bd1 = new BasicDataSource();
+    private JdbcTemplate jdbcTemplate;
+    public ControleComponente() {
+    this.bd1 = new BasicDataSource();
+    bd1.setDriverClassName("com.mysql.cj.jdbc.Driver");
+    bd1.setUrl("jdbc:mysql://localhost:3306/meubanco");
+    bd1.setUsername("root");
+    bd1.setPassword("mfwhore3150");
+    }
 
-    private Double usoMaxCpu;
-    private Double usoMaxRam;
+    public BasicDataSource getBancoDeDados() {
+    
+        return bd1;
+    }
+    
     /*
     usoMaxRam - 100%
     usoAtualCpu - X
@@ -98,7 +111,10 @@ public class ControleComponente {
     }else{
     return "Estável";
     }}
-    
+   public void incluir() {
+    jdbcTemplate.update("insert into monitoraMaquina (cpu, ram, disco) values (?,?,?)", 
+    componente1.getUsoCpuAtual(), componente1.getPorcentagemUsoRam(), componente1.getPorcentagemUsoDisco());
+    }
     
     
     
