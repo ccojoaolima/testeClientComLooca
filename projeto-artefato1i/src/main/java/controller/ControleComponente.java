@@ -15,6 +15,7 @@ public class ControleComponente {
     private Double usoAtualDisco = 0.0;
     private Double usoAtualRam = 0.0;
     private String nivelDeAlerta;
+    private String listaDeDicas;
     private Double porcentagemUsoRam = 0.0;
     
     private BasicDataSource bd1 = new BasicDataSource();
@@ -49,6 +50,9 @@ public class ControleComponente {
     public Double getUsoAtualCpu() {
         return componente1.getUsoCpuAtual();
     }
+    public Double getValorCpuArmazenado(){
+        return componente1.getUsoCpuAtual();
+    }
 
     public Double getUsoAtualDisco() {
         return componente1.getUsoDiscoAtual();
@@ -58,65 +62,46 @@ public class ControleComponente {
         return componente1.getUsoRamAtual();
     }
     
-    public Double getUsoMaxCpu(){
-    return componente1.getMaiorUsoCpu();
-    }
-    public Double getUsoMinCpu(){
-    return componente1.getMenorUsoCpu();
-    }
-    public Double getUsoMaxDisco(){
-    return componente1.getMaiorUsoDisco();
-    }
-    public Double getUsoMinDisco(){
-    return componente1.getMenorUsoDisco();
-    }
-    public Double getUsoMaxRam(){
-    return componente1.getMaiorUsoRam();
-    }
-    public Double getUsoMinRam(){
-    return componente1.getMenorUsoRam();
-    }
-    
     public Double getPorcentagemUsoRam(){
     return componente1.getPorcentagemUsoRam();
     }
     
-    public Double getPorcentagemUsoDisco(){
-    return componente1.getPorcentagemUsoDisco();
-    }
-    
     public String getNivelDeAlertaCpu(){
-    if(usoAtualCpu > 70){
-    return "Extremo";
-    }else if(usoAtualCpu >= 50 && usoAtualCpu <= 69){
-    return "Moderado";
-    }else{
-    return "Estável";
-    }}
+    return componente1.getNivelDeAlertaCpu();
+    
+    }
     
     public String getNivelDeAlertaDisco(){
-    if(usoAtualDisco > 70){
-    return "Extremo";
-    }else if(usoAtualDisco >= 50 && usoAtualDisco <= 69){
-    return "Moderado";
-    }else{
-    return "Estável";
-    }}
+    return componente1.getNivelDeAlertaDisco();
+    }
     
     public String getNivelDeAlertaRam(){
-    if(usoAtualRam > 70){
-    return "Extremo";
-    }else if(usoAtualRam >= 50 && usoAtualCpu <= 69){
-    return "Moderado";
-    }else{
-    return "Estável";
-    }}
-   public void incluir() {
+    return componente1.getNivelDeAlertaRam();
+    }
+    
+
+    public String getListaDeDicas(){
+   return componente1.getListaDeDicas();
+    }
+    
+    public String getIdentificadorDaCpu(){
+    return componente1.getIdentificadorDaCpu();
+    }
+   
+    
+    
+    
+    
+    }
+        
+        
+   /*public void incluir() {
     jdbcTemplate.update("insert into monitoraMaquina (cpu, ram, disco) values (?,?,?)", 
     componente1.getUsoCpuAtual(), componente1.getPorcentagemUsoRam(), componente1.getPorcentagemUsoDisco());
-    }
+    }*/
+   
     
     
     
-    }
+    
 

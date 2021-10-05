@@ -13,11 +13,10 @@ public class aaaa {
     public static void main(String[] args) {
         Componente componente1 = new Componente();
         componente1.getUsoDiscoAtual();
-        componente1.getMenorUsoCpu();
-      
-     
-        
-        
+      //  componente1.getMenorUsoCpu();
+        //componente1.getMenorUsoDisco();
+      //  componente1.getPorcentagemUsoDisco();
+           
     }
     
 }
