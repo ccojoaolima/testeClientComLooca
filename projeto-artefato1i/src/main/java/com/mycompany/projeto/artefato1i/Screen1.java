@@ -198,14 +198,14 @@ public class Screen1 extends javax.swing.JFrame {
                     .addComponent(lblDicaFixa)
                     .addComponent(lblIdMaq)
                     .addComponent(lblIdMaqVar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblDataCaptura)
                             .addComponent(lblDataCapturaVar))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel4)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -262,16 +262,17 @@ public class Screen1 extends javax.swing.JFrame {
     prgMem.setValue(controle1.getPorcentagemUsoRam().intValue());
     
     lblUsoCpuMinVar.setText(controle1.getIdentificadorDaCpu());
-    lblUsoDiskVar.setText(controle1.getNivelDeAlertaDisco());
+    lblUsoDiskVar.setText(controle1.getUsoAtualDisco().toString());
    
     //lblUsoDiskMinVar.setText(controle1.getUsoMinDisco().toString());
-    //lblUsoDiskVar.setText(controle1.getUsoMaxDisco().toString());
+//lblUsoDiskVar.setText(controle1.getUsoMaxDisco().toString());
     //lblUsoMemMinVar.setText(controle1.getUsoMinRam().toString());
     //lblUsoMemVar.setText(controle1.getUsoMaxRam().toString());
     
-    
-    
-    
+  
+    lblIdMaqVar.setText(controle1.getIdentificacaoMaquina());
+    lblDataCapturaVar.setText(controle1.getDataDaCaptura());
+    //lblDataCapturaVar.setText(contr);
     /* minhas metricas de alerta:
     70> Extremo
     50 - 69 - Moderado
@@ -283,8 +284,7 @@ public class Screen1 extends javax.swing.JFrame {
     lblDica.setText(controle1.getListaDeDicas());
     
     
-    
-  //  controle1.incluir();
+    controle1.incluir();
     
       
     }//GEN-LAST:event_jButton1ActionPerformed

@@ -23,13 +23,12 @@ public class ControleComponente {
     public ControleComponente() {
     this.bd1 = new BasicDataSource();
     bd1.setDriverClassName("com.mysql.cj.jdbc.Driver");
-    bd1.setUrl("jdbc:mysql://localhost:3306/meubanco");
+    bd1.setUrl("jdbc:mysql://localhost:3306/paymoon");
     bd1.setUsername("root");
     bd1.setPassword("mfwhore3150");
     }
 
     public BasicDataSource getBancoDeDados() {
-    
         return bd1;
     }
     
@@ -87,18 +86,28 @@ public class ControleComponente {
     public String getIdentificadorDaCpu(){
     return componente1.getIdentificadorDaCpu();
     }
+    
+    public String getIdentificacaoMaquina(){
+    return componente1.getIdentificacaoDaMaquina();
+    }
+    
+    public String getDataDaCaptura(){
+    return componente1.getDataDaLeitura();
+    }
    
     
+    public void incluir() {
+    jdbcTemplate.update("insert into monitoraMaquina (cpu, ram, disco) values (?,?,?)", 
+    componente1.getUsoCpuAtual(), componente1.getPorcentagemUsoRam(), componente1.getUsoDiscoAtual());
+    }
     
+   
     
     
     }
         
         
-   /*public void incluir() {
-    jdbcTemplate.update("insert into monitoraMaquina (cpu, ram, disco) values (?,?,?)", 
-    componente1.getUsoCpuAtual(), componente1.getPorcentagemUsoRam(), componente1.getPorcentagemUsoDisco());
-    }*/
+  
    
     
     

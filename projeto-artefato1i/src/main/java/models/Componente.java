@@ -8,7 +8,9 @@ package models;
 import com.github.britooo.looca.api.core.Looca;
 import com.github.britooo.looca.api.group.discos.Disco;
 import com.github.britooo.looca.api.group.discos.DiscosGroup;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 import org.apache.commons.dbcp2.BasicDataSource;
@@ -34,8 +36,11 @@ public class Componente {
   private String listaDeDicas = "";
   private String identificadorDaCpu = "";
   private String identificadorDaMaquina = "";
+  private String dataDaLeitura = "";
+  private String discoEmUsoLudico = "";
   private Looca looca1 = new Looca();
   private BasicDataSource bd1 = new BasicDataSource();
+  private Date data1 = new Date(); 
 
   ArrayList <Integer> historicoValoresProc  = new ArrayList();
   //ArrayList <Integer> historicoValoresDisk = new ArrayList();
@@ -89,6 +94,21 @@ public class Componente {
     }
     return this.porcentagemUsoDisco; 
     } 
+    
+    public Double getDiscoEmUsoAtual(){
+        
+    DiscosGroup discos1 = looca1.getGrupoDeDiscos();
+    List<Disco> listaDiscos1 = discos1.getDiscos();
+    for (Disco disco : listaDiscos1) {
+ 
+     tamanhoDiscoBytes = disco.getTamanho().doubleValue();
+     gigabytesDeEscrita = disco.getEscritas().doubleValue();
+     usoDiscoAtual = tamanhoDiscoBytes - gigabytesDeEscrita;
+     discoEmUsoLudico = String.format("%.2f", usoDiscoAtual);    
+    }
+    return this.usoDiscoAtual; 
+    } 
+    
     
     public Double getUsoRamAtual(){
     usoRamAtual = looca1.getMemoria().getEmUso().doubleValue();
@@ -178,10 +198,16 @@ public class Componente {
     }
     
     public String getIdentificacaoDaMaquina(){
-    looca1.getSistema().getArquitetura();
+    identificadorDaMaquina = looca1.getSistema().getSistemaOperacional();
+    identificadorDaMaquina += looca1.getSistema().getFabricante();
     return identificadorDaMaquina;
     }
     
+    public String getDataDaLeitura(){
+    SimpleDateFormat formataData = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+   dataDaLeitura = formataData.format(data1);
+    return dataDaLeitura;
+    }
     
     
   }
