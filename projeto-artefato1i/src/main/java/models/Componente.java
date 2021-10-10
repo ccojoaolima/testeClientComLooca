@@ -14,6 +14,7 @@ import java.util.Date;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 import org.apache.commons.dbcp2.BasicDataSource;
+import org.springframework.jdbc.core.JdbcTemplate;
 
 /**
  *
@@ -39,7 +40,9 @@ public class Componente {
   private String dataDaLeitura = "";
   private String discoEmUsoLudico = "";
   private Looca looca1 = new Looca();
+  
   private BasicDataSource bd1 = new BasicDataSource();
+  private JdbcTemplate jdbcTemplate;
   private Date data1 = new Date(); 
 
   ArrayList <Integer> historicoValoresProc  = new ArrayList();
@@ -52,14 +55,15 @@ public class Componente {
     this.usoRamAtual = usoRamAtual;
         
     this.bd1 = new BasicDataSource();
-    bd1.setDriverClassName("org.h2.Driver");
-    bd1.setUrl("jdbc:h2:file:./meu_banco");
-    bd1.setUsername("sa");
-    bd1.setPassword("");
+    bd1.setDriverClassName("com.mysql.cj.jdbc.Driver");
+    bd1.setUrl("jdbc:mysql://localhost:3306/paymoon");
+    bd1.setUsername("root");
+    bd1.setPassword("mfwhore3150");
     }
     
 
     public BasicDataSource getBancoDeDados() {
+        System.out.println(bd1.getUrl());
         return bd1;
     }
     
@@ -82,7 +86,7 @@ public class Componente {
      */
     
      tamanhoDiscoBytes = ((disco.getTamanho().doubleValue()/1024)/1024)/1024;
-     gigabytesDeEscrita = ((disco.getBytesDeEscritas().doubleValue()/1024)/1024)/1024;
+     gigabytesDeEscrita = ((disco.getTamanhoAtualDaFila().doubleValue()/1024)/1024)/1024;
      
      usoDiscoAtual = tamanhoDiscoBytes - gigabytesDeEscrita;
      porcentagemUsoDisco = (usoDiscoAtual * 100 )/ tamanhoDiscoBytes;
@@ -103,6 +107,7 @@ public class Componente {
  
      tamanhoDiscoBytes = disco.getTamanho().doubleValue();
      gigabytesDeEscrita = disco.getEscritas().doubleValue();
+     
      usoDiscoAtual = tamanhoDiscoBytes - gigabytesDeEscrita;
      discoEmUsoLudico = String.format("%.2f", usoDiscoAtual);    
     }
@@ -207,6 +212,15 @@ public class Componente {
     SimpleDateFormat formataData = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
    dataDaLeitura = formataData.format(data1);
     return dataDaLeitura;
+    }
+    
+    public void incluir() {
+    Double a = getUsoCpuAtual();
+    Double b = getUsoRamAtual();
+    Double c = getDiscoEmUsoAtual();
+  
+    jdbcTemplate.update("insert into monitoraMaquina (cpu,ram,disco) values (?,?,?)", 
+    a,b,c);
     }
     
     

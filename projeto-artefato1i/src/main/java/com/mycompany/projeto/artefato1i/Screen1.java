@@ -265,7 +265,7 @@ public class Screen1 extends javax.swing.JFrame {
     lblUsoDiskVar.setText(controle1.getUsoAtualDisco().toString());
    
     //lblUsoDiskMinVar.setText(controle1.getUsoMinDisco().toString());
-//lblUsoDiskVar.setText(controle1.getUsoMaxDisco().toString());
+    //lblUsoDiskVar.setText(controle1.getUsoMaxDisco().toString());
     //lblUsoMemMinVar.setText(controle1.getUsoMinRam().toString());
     //lblUsoMemVar.setText(controle1.getUsoMaxRam().toString());
     
@@ -284,7 +284,7 @@ public class Screen1 extends javax.swing.JFrame {
     lblDica.setText(controle1.getListaDeDicas());
     
     
-    controle1.incluir();
+    controle1.getInfosProBancoDados();
     
       
     }//GEN-LAST:event_jButton1ActionPerformed
