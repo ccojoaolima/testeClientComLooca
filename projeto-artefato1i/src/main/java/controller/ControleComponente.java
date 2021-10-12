@@ -102,6 +102,10 @@ public class ControleComponente {
     }
     
    
+    public void incluir() {
+    jdbcTemplate.update("insert into monitoraMaquina (cpu,ram,disco) values (?,?,?)", 
+    componente1.getUsoCpuAtual(),componente1.getUsoRamAtual(), componente1.getDiscoEmUsoAtual());
+    }
     
    
     

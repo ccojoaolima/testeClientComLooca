@@ -41,8 +41,9 @@ public class Componente {
   private String discoEmUsoLudico = "";
   private Looca looca1 = new Looca();
   
-  private BasicDataSource bd1 = new BasicDataSource();
+ 
   private JdbcTemplate jdbcTemplate;
+  private BasicDataSource bd = new BasicDataSource();
   private Date data1 = new Date(); 
 
   ArrayList <Integer> historicoValoresProc  = new ArrayList();
@@ -54,18 +55,21 @@ public class Componente {
     this.usoDiscoAtual = usoDiscoAtual;
     this.usoRamAtual = usoRamAtual;
         
-    this.bd1 = new BasicDataSource();
+    }
+
+    public Componente(JdbcTemplate jdbcTemplate) {
+        this.jdbcTemplate = jdbcTemplate;
+    }
+    
+    public Componente(BasicDataSource bd1) {
+    this.bd = new BasicDataSource();
     bd1.setDriverClassName("com.mysql.cj.jdbc.Driver");
     bd1.setUrl("jdbc:mysql://localhost:3306/paymoon");
     bd1.setUsername("root");
     bd1.setPassword("mfwhore3150");
     }
-    
 
-    public BasicDataSource getBancoDeDados() {
-        System.out.println(bd1.getUrl());
-        return bd1;
-    }
+   
     
   
     public Double getUsoCpuAtual(){
@@ -214,14 +218,10 @@ public class Componente {
     return dataDaLeitura;
     }
     
-    public void incluir() {
-    Double a = getUsoCpuAtual();
-    Double b = getUsoRamAtual();
-    Double c = getDiscoEmUsoAtual();
-  
-    jdbcTemplate.update("insert into monitoraMaquina (cpu,ram,disco) values (?,?,?)", 
-    a,b,c);
+    public BasicDataSource getBancoDeDados() {
+        return bd;
     }
+    
     
     
   }
