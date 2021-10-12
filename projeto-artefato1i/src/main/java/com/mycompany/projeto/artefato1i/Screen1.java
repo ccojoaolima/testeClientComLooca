@@ -283,7 +283,7 @@ public class Screen1 extends javax.swing.JFrame {
     lblAlertaMem.setText(controle1.getNivelDeAlertaRam());
     lblDica.setText(controle1.getListaDeDicas());
     
-    
+    controle1.retornarBd();
     controle1.getInfosProBancoDados();
     
       
