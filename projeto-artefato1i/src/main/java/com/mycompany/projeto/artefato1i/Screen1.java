@@ -6,6 +6,9 @@
 package com.mycompany.projeto.artefato1i;
 
 import controller.ControleComponente;
+import controller.ControleJDBC;
+import org.apache.commons.dbcp2.BasicDataSource;
+import org.springframework.jdbc.core.JdbcTemplate;
 import models.Componente;
 import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
@@ -55,6 +58,8 @@ public class Screen1 extends javax.swing.JFrame {
         lblDataCaptura = new javax.swing.JLabel();
         lblDataCapturaVar = new javax.swing.JLabel();
         lblIdMaqVar = new javax.swing.JLabel();
+        lblNomeDisco = new javax.swing.JLabel();
+        lblNomeDoDiscoVar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -121,6 +126,10 @@ public class Screen1 extends javax.swing.JFrame {
 
         lblIdMaqVar.setText("null");
 
+        lblNomeDisco.setText("Unidade do Disco:");
+
+        lblNomeDoDiscoVar.setText("null");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -160,7 +169,11 @@ public class Screen1 extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(lblUsoDiskMinFixa)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(lblUsoDiskMinVar))
+                                        .addComponent(lblUsoDiskMinVar)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(lblNomeDisco)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(lblNomeDoDiscoVar))
                                     .addComponent(jLabel2)
                                     .addComponent(jLabel3))
                                 .addGap(0, 18, Short.MAX_VALUE))
@@ -226,7 +239,9 @@ public class Screen1 extends javax.swing.JFrame {
                             .addComponent(lblMaxDiskFixa)
                             .addComponent(lblUsoDiskVar)
                             .addComponent(lblUsoDiskMinFixa)
-                            .addComponent(lblUsoDiskMinVar))
+                            .addComponent(lblUsoDiskMinVar)
+                            .addComponent(lblNomeDisco)
+                            .addComponent(lblNomeDoDiscoVar))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel2)
                         .addGap(1, 1, 1)
@@ -256,6 +271,7 @@ public class Screen1 extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
     ControleComponente controle1 = new ControleComponente();
+    ControleJDBC controleBD1 = new ControleJDBC();
    
     prgProc.setValue(controle1.getUsoAtualCpu().intValue());
     prgDisk.setValue(controle1.getUsoAtualDisco().intValue());
@@ -263,6 +279,7 @@ public class Screen1 extends javax.swing.JFrame {
     
     lblUsoCpuMinVar.setText(controle1.getIdentificadorDaCpu());
     lblUsoDiskVar.setText(controle1.getUsoAtualDisco().toString());
+    lblNomeDoDiscoVar.setText(controle1.getNomeDoDisco());
    
     //lblUsoDiskMinVar.setText(controle1.getUsoMinDisco().toString());
     //lblUsoDiskVar.setText(controle1.getUsoMaxDisco().toString());
@@ -283,7 +300,8 @@ public class Screen1 extends javax.swing.JFrame {
     lblAlertaMem.setText(controle1.getNivelDeAlertaRam());
     lblDica.setText(controle1.getListaDeDicas());
     
-    controle1.retornarBd();
+    
+    controleBD1.inserirNoBd();
     controle1.getInfosProBancoDados();
     
       
@@ -346,6 +364,8 @@ public class Screen1 extends javax.swing.JFrame {
     private javax.swing.JLabel lblIdMaq;
     private javax.swing.JLabel lblIdMaqVar;
     private javax.swing.JLabel lblMaxDiskFixa;
+    private javax.swing.JLabel lblNomeDisco;
+    private javax.swing.JLabel lblNomeDoDiscoVar;
     private javax.swing.JLabel lblUsoCpuMinFixa;
     private javax.swing.JLabel lblUsoCpuMinVar;
     private javax.swing.JLabel lblUsoDiskMinFixa;

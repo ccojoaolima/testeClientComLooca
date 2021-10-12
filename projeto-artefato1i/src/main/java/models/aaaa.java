@@ -22,7 +22,7 @@ public class aaaa {
         //componente1.getMenorUsoCpu();
         //componente1.getMenorUsoDisco();
         //componente1.getPorcentagemUsoDisco();
-        componente1.incluir();
+        //componente1.incluir();
         
         /*try {
             System.out.println("aaa" + componente1.getIdentificacaoDaMaquina());

@@ -63,6 +63,10 @@
                                       <Component id="lblUsoDiskMinFixa" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="lblUsoDiskMinVar" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="lblNomeDisco" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="lblNomeDoDiscoVar" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="jLabel2" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel3" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -152,6 +156,8 @@
                           <Component id="lblUsoDiskVar" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="lblUsoDiskMinFixa" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="lblUsoDiskMinVar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblNomeDisco" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="lblNomeDoDiscoVar" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
@@ -336,6 +342,16 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblIdMaqVar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="null"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblNomeDisco">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Unidade do Disco:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="lblNomeDoDiscoVar">
       <Properties>
         <Property name="text" type="java.lang.String" value="null"/>
       </Properties>

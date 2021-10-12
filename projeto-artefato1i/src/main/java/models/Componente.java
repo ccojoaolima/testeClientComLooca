@@ -39,6 +39,9 @@ public class Componente {
   private String identificadorDaMaquina = "";
   private String dataDaLeitura = "";
   private String discoEmUsoLudico = "";
+  private String nomeDoDisco = "";
+  
+  
   private Looca looca1 = new Looca();
   
  
@@ -57,21 +60,6 @@ public class Componente {
         
     }
 
-    public Componente(JdbcTemplate jdbcTemplate) {
-        this.jdbcTemplate = jdbcTemplate;
-    }
-    
-    public Componente(BasicDataSource bd1) {
-    this.bd = new BasicDataSource();
-    bd1.setDriverClassName("com.mysql.cj.jdbc.Driver");
-    bd1.setUrl("jdbc:mysql://localhost:3306/paymoon");
-    bd1.setUsername("root");
-    bd1.setPassword("mfwhore3150");
-    }
-
-   
-    
-  
     public Double getUsoCpuAtual(){
     usoCpuAtual = looca1.getProcessador().getUso();
     usoPorcentagemCpuAtual = usoCpuAtual.intValue();
@@ -216,6 +204,16 @@ public class Componente {
     SimpleDateFormat formataData = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
    dataDaLeitura = formataData.format(data1);
     return dataDaLeitura;
+    }
+    
+    public String getNomeDoDisco(){
+    DiscosGroup discos1 = looca1.getGrupoDeDiscos();
+    List<Disco> listaDiscos1 = discos1.getDiscos();
+    for (Disco disco : listaDiscos1) {
+    nomeDoDisco =  disco.getNome();
+
+    }
+    return this.nomeDoDisco; 
     }
     
     public BasicDataSource getBancoDeDados() {
