@@ -7,11 +7,14 @@ package com.mycompany.projeto.artefato1i;
 
 import controller.ControleComponente;
 import controller.ControleJDBC;
+import java.sql.SQLException;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.jdbc.core.JdbcTemplate;
 import models.Componente;
 import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -301,7 +304,15 @@ public class Screen1 extends javax.swing.JFrame {
     lblDica.setText(controle1.getListaDeDicas());
     
     
-    controleBD1.inserirNoBd();
+   
+        try {
+            controleBD1.inserirNoBd();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Screen1.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(Screen1.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
  
     
       

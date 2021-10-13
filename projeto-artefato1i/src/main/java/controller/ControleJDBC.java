@@ -24,6 +24,7 @@ public class ControleJDBC {
     private Double usoDisco = 0.0;
     private Double usoRam = 0.0;
       
+    private String origem = "Java-looca";
      
      
     public void inserirNoBd() throws ClassNotFoundException, SQLException{
@@ -49,8 +50,11 @@ public class ControleJDBC {
             Statement stmt = con.createStatement();
 
             // Exemplo: inserindo dados na tabela de filmes
-            sql = "INSERT INTO monitoraMaquina (cpu, ram, disco)"
-                    + "VALUES ("+controle1.getUsoAtualCpu()+","+controle1.getPorcentagemUsoRam()+ ","+controle1.getUsoAtualDisco()+" )";
+            sql = "INSERT INTO monitoraMaquina (maquina,origem,cpu, ram, disco, dataCaptura)"
+                    + "VALUES ('"+controle1.getIdentificacaoMaquina()+"','Looca-Java',"+controle1.getUsoAtualCpu()+","
+                    + ""+controle1.getPorcentagemUsoRam()+ ","
+                    + controle1.getUsoAtualDisco()+",'"+controle1.getDataDaCaptura()+"');";
+            
             stmt.executeUpdate(sql);
 
             con.close();

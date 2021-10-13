@@ -199,7 +199,7 @@ public class Componente {
     }
     
     public String getDataDaLeitura(){
-    SimpleDateFormat formataData = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+    SimpleDateFormat formataData = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
    dataDaLeitura = formataData.format(data1);
     return dataDaLeitura;
     }
