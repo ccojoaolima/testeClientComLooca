@@ -14,32 +14,27 @@ import org.springframework.jdbc.core.JdbcTemplate;
 public class ControleJDBC {
     private ControleComponente controle1 = new ControleComponente();
     private BasicDataSource bd1 = new BasicDataSource();
-     private JdbcTemplate jdbcTemplate;
+    private JdbcTemplate jdbcTemplate = new JdbcTemplate(bd1);
   
-     private Double usoCPU = 0.0;
+    private Double usoCPU = 0.0;
     private Double usoDisco = 0.0;
     private Double usoRam = 0.0;
-      
-     
-     
+       
     public void inserirNoBd(){
         
-   this.bd1 = new BasicDataSource();
+    this.bd1 = new BasicDataSource();
     bd1.setDriverClassName("com.mysql.cj.jdbc.Driver");
     bd1.setUrl("jdbc:mysql://localhost:3306/paymoon");
-    bd1.setUsername("root");
-    bd1.setPassword("mfwhore3150");    
+    bd1.setUsername("urubu100");
+    bd1.setPassword("");    
     
-    
-    
-    
-  
     usoCPU = controle1.getUsoAtualCpu();
     usoDisco = controle1.getUsoAtualDisco();
     usoRam = controle1.getUsoAtualRam();
-    
+        
     jdbcTemplate.update("INSERT INTO monitoraMaquina (cpu, ram, disco)"
-                    + "VALUES ("+controle1.getUsoAtualCpu()+","+controle1.getPorcentagemUsoRam()+ ","+controle1.getUsoAtualDisco()+" )");
+                    + "VALUES (?,?,?);" 
+                       ,usoCPU, usoDisco, usoRam);
     }
     
 }

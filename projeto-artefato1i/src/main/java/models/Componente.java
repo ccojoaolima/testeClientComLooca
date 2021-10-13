@@ -12,7 +12,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.concurrent.ThreadLocalRandom;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -156,23 +155,7 @@ public class Componente {
     }else{
     return "Estável";
     }}
-    
-    /* public String subirDicas(){
-     Double usoAtualCpu = getUsoCpuAtual();
-     Double usoAtualRam = getUsoRamAtual();
-     Double usoAtualDisco = getUsoDiscoAtual();
-     if(usoAtualCpu > 10){
-     return "Convem fechar alguns arquivos";
-     }
-     if(usoAtualRam > 10){
-     return "Convem instalar mais RAM";
-     }
-     if(usoAtualDisco > 10){
-     return"Convem instalar um SSD secundario";
-     } else {
-     return "";
-     }*/
-
+ 
     public String getListaDeDicas() {
    
      if(usoCpuAtual > 70){
