@@ -302,7 +302,7 @@ public class Screen1 extends javax.swing.JFrame {
     
     
     controleBD1.inserirNoBd();
-    controle1.getInfosProBancoDados();
+ 
     
       
     }//GEN-LAST:event_jButton1ActionPerformed

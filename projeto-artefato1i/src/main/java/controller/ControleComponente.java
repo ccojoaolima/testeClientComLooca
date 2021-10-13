@@ -18,16 +18,7 @@ public class ControleComponente {
     private String listaDeDicas;
     private Double porcentagemUsoRam = 0.0;
     
-    private BasicDataSource bd1 = new BasicDataSource();
-    private JdbcTemplate jdbcTemplate;
-
-   public ControleComponente(){
-   this.usoAtualCpu = 0.0;
-   this.usoAtualDisco = 0.0;
-   this.usoAtualRam = 0.0;
    
-   
-   }
     
     /*public ControleComponente() {
     this.bd1 = new BasicDataSource();
@@ -108,13 +99,6 @@ public class ControleComponente {
     return componente1.getNomeDoDisco();
     }
     
-    
-    public BasicDataSource getInfosProBancoDados(){
-    return componente1.getBancoDeDados();
-    }
-   
-   
-
     
    
     

@@ -4,6 +4,10 @@
  * and open the template in the editor.
  */
 package controller;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -14,42 +18,18 @@ import org.springframework.jdbc.core.JdbcTemplate;
 public class ControleJDBC {
     private ControleComponente controle1 = new ControleComponente();
     private BasicDataSource bd1 = new BasicDataSource();
-    private JdbcTemplate jdbcTemplate = new JdbcTemplate(bd1);
+     private JdbcTemplate jdbcTemplate = new JdbcTemplate(bd1);
   
-    private Double usoCPU = 0.0;
+     private Double usoCPU = 0.0;
     private Double usoDisco = 0.0;
     private Double usoRam = 0.0;
-       
-    public void inserirNoBd(){
+      
+     
+     
+    public void inserirNoBd() throws ClassNotFoundException, SQLException{
+        String sql;
         
-    this.bd1 = new BasicDataSource();
-    bd1.setDriverClassName("com.mysql.cj.jdbc.Driver");
-    bd1.setUrl("jdbc:mysql://localhost:3306/paymoon");
-    bd1.setUsername("urubu100");
-    bd1.setPassword("");    
-    
-    usoCPU = controle1.getUsoAtualCpu();
-    usoDisco = controle1.getUsoAtualDisco();
-    usoRam = controle1.getUsoAtualRam();
         
-    jdbcTemplate.update("INSERT INTO monitoraMaquina (cpu, ram, disco)"
-                    + "VALUES (?,?,?);" 
-                       ,usoCPU, usoDisco, usoRam);
-    }
-    
-}
-    
-    
-    
-    
-    
-      /*String sql;
-        
-        /*
-         *	O driver JDBC do MySQL está disponível no seguinte endereço:
-         *	http://dev.mysql.com/downloads/connector/j/5.0.html
-         
-
         // Configuração dos parâmetros de conexão
         String server = "localhost";
         String port = "3306";               // Porta TCP padrão do MySQL
@@ -77,7 +57,30 @@ public class ControleJDBC {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+        
+   /*this.bd1 = new BasicDataSource();
+   Class.forName("com.mysql.cj.jdbc.Driver");
+   Connection conexao = DriverManager.getConnection("jdbc:mysql://localhost:3306/paymoon","root","mfwhore3150");
+    bd1.setDriverClassName("com.mysql.cj.jdbc.Driver");
+    bd1.setUrl("jdbc:mysql://localhost:3306/paymoon");
+    bd1.setUsername("root");
+    bd1.setPassword("mfwhore3150");    
+    
+    usoCPU = controle1.getUsoAtualCpu();
+    usoDisco = controle1.getUsoAtualDisco();
+    usoRam = controle1.getUsoAtualRam();
+    
+    jdbcTemplate.update("insert into monitoraMaquina (cpu,ram,disco) values (37.0,2,2);");
     }*/
+    
+}
+    
+    
+    
+    
+    
+      
 
     
  
