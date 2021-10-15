@@ -6,8 +6,11 @@
 package controller;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -49,7 +52,7 @@ public class ControleJDBC {
             // Cria-se Statement com base na conexão con
             Statement stmt = con.createStatement();
 
-            // Exemplo: inserindo dados na tabela de filmes
+            
             sql = "INSERT INTO monitoraMaquina (maquina,origem,cpu, ram, disco, dataCaptura)"
                     + "VALUES ('"+controle1.getIdentificacaoMaquina()+"','Looca-Java',"+controle1.getUsoAtualCpu()+","
                     + ""+controle1.getPorcentagemUsoRam()+ ","
@@ -62,6 +65,61 @@ public class ControleJDBC {
             e.printStackTrace();
         }
     }
+    
+     public Boolean recuperarLoginBD(String nomeUser, String senhaUser) throws ClassNotFoundException, SQLException{
+        String sql;
+        List listaResult = new ArrayList();
+         
+        
+        String server = "localhost";
+        String port = "3306";               // Porta TCP padrÃ£o do MySQL
+        String database = "paymoon";
+
+        
+        String user = "root";
+        String passwd = "mfwhore3150";
+
+        try{
+            String url = "jdbc:mysql://" + server + ":" + port + "/" + database;
+
+            // Abre-se a conexÃ£o com o Banco de Dados
+            Connection con = DriverManager.getConnection(url, user, passwd);
+
+            // Cria-se Statement com base na conexÃ£o con
+            Statement stmt = con.createStatement();
+           
+
+            
+            sql = String.format("select emailUsuario,senhaUsuario from cadastroUsuario "
+                    + "where emailUsuario = '%s' and senhaUsuario = '%s';", nomeUser, senhaUser);
+            
+            
+            
+            ResultSet result1 = stmt.executeQuery(sql);
+           // System.out.println("result" + result1);
+            //System.out.println(result1.getString(1));
+            System.out.println(sql);
+            while (result1.next()) {     
+               // System.out.println(result1.getString(1));
+                listaResult.add(result1.getString(1));
+                //System.out.println("Cheguei aq");
+            }
+            
+            con.close();
+            
+            if (listaResult.isEmpty()) {
+                return false;
+            }else{
+             return true;
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
+    }
+    
+  
+
         
    /*this.bd1 = new BasicDataSource();
    Class.forName("com.mysql.cj.jdbc.Driver");
