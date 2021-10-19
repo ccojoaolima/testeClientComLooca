@@ -99,7 +99,9 @@ public class ControleComponente {
     return componente1.getNomeDoDisco();
     }
     
-    
+    public Double getDiscoEmUsoAtual(){
+    return componente1.getDiscoEmUsoAtual();
+    }
    
     
     

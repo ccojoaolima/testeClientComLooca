@@ -21,6 +21,9 @@ import org.springframework.jdbc.core.JdbcTemplate;
  * @author João Henrique
  */
 public class Componente {
+  private Long usoDiscoLong;  
+    
+    
   private Double usoCpuAtual = 0.0;
   private Integer usoPorcentagemCpuAtual = 0;
   private Double usoDiscoAtual = 0.0;
@@ -67,16 +70,20 @@ public class Componente {
     public Double getUsoDiscoAtual(){
     DiscosGroup discos1 = looca1.getGrupoDeDiscos();
     List<Disco> listaDiscos1 = discos1.getDiscos();
+    
+    usoDiscoLong = discos1.getVolumes().get(0).getDisponivel();
+    
     for (Disco disco : listaDiscos1) {
-    /*
+   
+     tamanhoDiscoBytes = ((disco.getTamanho().doubleValue()/1024)/1024)/1024;
+     gigabytesDeEscrita = usoDiscoLong.doubleValue()/ 1000000000;
+     
+      /*
      tamanhoDisco               = 100%
      tamanhoDisco - getEscritas = x%
      tamanhoDisco * x = (tamanhoDisco - getEscritas) * 100;
      porcentagemUsoDisco = ((tamanhoDisco - getEscritas) * 100) / tamanhoDisco;
      */
-    
-     tamanhoDiscoBytes = ((disco.getTamanho().doubleValue()/1024)/1024)/1024;
-     gigabytesDeEscrita = ((disco.getTamanhoAtualDaFila().doubleValue()/1024)/1024)/1024;
      
      usoDiscoAtual = tamanhoDiscoBytes - gigabytesDeEscrita;
      porcentagemUsoDisco = (usoDiscoAtual * 100 )/ tamanhoDiscoBytes;
@@ -91,17 +98,19 @@ public class Componente {
     
     public Double getDiscoEmUsoAtual(){
         
+    Integer testeDisco = 0;
+        
     DiscosGroup discos1 = looca1.getGrupoDeDiscos();
     List<Disco> listaDiscos1 = discos1.getDiscos();
     for (Disco disco : listaDiscos1) {
  
-     tamanhoDiscoBytes = disco.getTamanho().doubleValue();
-     gigabytesDeEscrita = disco.getEscritas().doubleValue();
+     tamanhoDiscoBytes = ((disco.getTamanho().doubleValue()/1024)/1024)/1024;
+     //gigabytesDeEscrita = (disco.getEscritas().doubleValue()/1024);
      
-     usoDiscoAtual = tamanhoDiscoBytes - gigabytesDeEscrita;
-     discoEmUsoLudico = String.format("%.2f", usoDiscoAtual);    
+     //usoDiscoAtual = tamanhoDiscoBytes - gigabytesDeEscrita;
+     //discoEmUsoLudico = String.format("%.2f", usoDiscoAtual);    
     }
-    return this.usoDiscoAtual; 
+    return this.tamanhoDiscoBytes; 
     } 
     
     
@@ -124,7 +133,7 @@ public class Componente {
     
      public String getNivelDeAlertaCpu(){
      
-    System.out.println("Nivel de alerta Cpu" + usoCpuAtual);
+   // System.out.println("Nivel de alerta Cpu" + usoCpuAtual);
     if(usoCpuAtual > 70.0){
     return "Extremo";
     }else if(usoCpuAtual >= 50 && usoCpuAtual <= 69){
@@ -136,17 +145,17 @@ public class Componente {
     }
     
     public String getNivelDeAlertaDisco(){
-    System.out.println("Nivel de alerta disco" + usoDiscoAtual);
-    if(usoDiscoAtual > 70.0){
+    // System.out.println("Nivel de alerta disco" + gigabytesDeEscrita);
+    if(porcentagemUsoDisco > 70.0){
     return "Extremo";
-    }else if(usoDiscoAtual >= 50.0 && usoDiscoAtual <= 69.0){
+    }else if(porcentagemUsoDisco >= 50.0 && porcentagemUsoDisco <= 69.0){
     return "Moderado";
     }else{
     return "Estável";
     }}
     
     public String getNivelDeAlertaRam(){
-    System.out.println("Nivel de alerta disco" + usoRamAtual);
+    //System.out.println("Nivel de alerta disco" + usoRamAtual);
     if(usoRamAtual > 70.0){
     return "Extremo";
     }else if(usoRamAtual >= 50.0 && usoRamAtual <= 69.0){

@@ -59,11 +59,7 @@
                                       <Component id="lblMaxDiskFixa" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="lblUsoDiskVar" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                      <Component id="lblUsoDiskMinFixa" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="lblUsoDiskMinVar" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
                                       <Component id="lblNomeDisco" min="-2" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="lblNomeDoDiscoVar" min="-2" max="-2" attributes="0"/>
@@ -154,8 +150,6 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="lblMaxDiskFixa" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="lblUsoDiskVar" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblUsoDiskMinFixa" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="lblUsoDiskMinVar" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="lblNomeDisco" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="lblNomeDoDiscoVar" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -262,16 +256,6 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="lblUsoDiskVar">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="null"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lblUsoDiskMinFixa">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Em uso:"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lblUsoDiskMinVar">
       <Properties>
         <Property name="text" type="java.lang.String" value="null"/>
       </Properties>

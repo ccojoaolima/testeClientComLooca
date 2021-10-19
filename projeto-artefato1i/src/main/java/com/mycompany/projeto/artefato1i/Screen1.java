@@ -46,8 +46,6 @@ public class Screen1 extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         lblMaxDiskFixa = new javax.swing.JLabel();
         lblUsoDiskVar = new javax.swing.JLabel();
-        lblUsoDiskMinFixa = new javax.swing.JLabel();
-        lblUsoDiskMinVar = new javax.swing.JLabel();
         lblAlertaCPUFixa = new javax.swing.JLabel();
         lblAlertaDiskFixa = new javax.swing.JLabel();
         lblAlertaMemFixa = new javax.swing.JLabel();
@@ -98,10 +96,6 @@ public class Screen1 extends javax.swing.JFrame {
         lblMaxDiskFixa.setText("Tamanho Total:");
 
         lblUsoDiskVar.setText("null");
-
-        lblUsoDiskMinFixa.setText("Em uso:");
-
-        lblUsoDiskMinVar.setText("null");
 
         lblAlertaCPUFixa.setText("Nível de Alerta:");
 
@@ -169,11 +163,7 @@ public class Screen1 extends javax.swing.JFrame {
                                         .addComponent(lblMaxDiskFixa)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(lblUsoDiskVar)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(lblUsoDiskMinFixa)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(lblUsoDiskMinVar)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGap(85, 85, 85)
                                         .addComponent(lblNomeDisco)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(lblNomeDoDiscoVar))
@@ -241,8 +231,6 @@ public class Screen1 extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(lblMaxDiskFixa)
                             .addComponent(lblUsoDiskVar)
-                            .addComponent(lblUsoDiskMinFixa)
-                            .addComponent(lblUsoDiskMinVar)
                             .addComponent(lblNomeDisco)
                             .addComponent(lblNomeDoDiscoVar))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -281,7 +269,7 @@ public class Screen1 extends javax.swing.JFrame {
     prgMem.setValue(controle1.getPorcentagemUsoRam().intValue());
     
     lblUsoCpuMinVar.setText(controle1.getIdentificadorDaCpu());
-    lblUsoDiskVar.setText(controle1.getUsoAtualDisco().toString());
+    lblUsoDiskVar.setText(controle1.getDiscoEmUsoAtual().toString());
     lblNomeDoDiscoVar.setText(controle1.getNomeDoDisco());
    
     //lblUsoDiskMinVar.setText(controle1.getUsoMinDisco().toString());
@@ -379,8 +367,6 @@ public class Screen1 extends javax.swing.JFrame {
     private javax.swing.JLabel lblNomeDoDiscoVar;
     private javax.swing.JLabel lblUsoCpuMinFixa;
     private javax.swing.JLabel lblUsoCpuMinVar;
-    private javax.swing.JLabel lblUsoDiskMinFixa;
-    private javax.swing.JLabel lblUsoDiskMinVar;
     private javax.swing.JLabel lblUsoDiskVar;
     private javax.swing.JProgressBar prgDisk;
     private javax.swing.JProgressBar prgMem;
