@@ -39,6 +39,7 @@ public class ScreenLogin extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         txtSenha = new javax.swing.JPasswordField();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -58,6 +59,10 @@ public class ScreenLogin extends javax.swing.JFrame {
         jLabel4.setText("SENHA :");
 
         txtSenha.setText("jPasswordField1");
+
+        jLabel3.setFont(new java.awt.Font("DejaVu Sans", 0, 36)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(153, 0, 204));
+        jLabel3.setText("PayMoon");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -88,11 +93,17 @@ public class ScreenLogin extends javax.swing.JFrame {
                 .addGap(283, 283, 283)
                 .addComponent(txtAviso)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addGap(262, 262, 262))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(303, 303, 303)
+                .addGap(270, 270, 270)
+                .addComponent(jLabel3)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
@@ -106,7 +117,7 @@ public class ScreenLogin extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtAviso)
-                .addContainerGap(312, Short.MAX_VALUE))
+                .addContainerGap(284, Short.MAX_VALUE))
         );
 
         pack();
@@ -182,6 +193,7 @@ public class ScreenLogin extends javax.swing.JFrame {
     private javax.swing.JButton btnLogin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel txtAviso;
     private javax.swing.JPasswordField txtSenha;
