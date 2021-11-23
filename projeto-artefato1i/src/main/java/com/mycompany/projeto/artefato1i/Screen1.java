@@ -7,11 +7,16 @@ package com.mycompany.projeto.artefato1i;
 
 import controller.ControleComponente;
 import controller.ControleJDBC;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.sql.SQLException;
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.jdbc.core.JdbcTemplate;
 import models.Componente;
 import java.util.ArrayList;
+
+import javax.swing.Timer;
+import java.util.TimerTask;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -21,12 +26,10 @@ import java.util.logging.Logger;
  * @author João Henrique
  */
 public class Screen1 extends javax.swing.JFrame {
-
-  
+  Timer timer;
    
     public Screen1() {
-        initComponents();
-        
+    initComponents();    
     }
 
     @SuppressWarnings("unchecked")
@@ -61,6 +64,7 @@ public class Screen1 extends javax.swing.JFrame {
         lblIdMaqVar = new javax.swing.JLabel();
         lblNomeDisco = new javax.swing.JLabel();
         lblNomeDoDiscoVar = new javax.swing.JLabel();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -127,6 +131,13 @@ public class Screen1 extends javax.swing.JFrame {
 
         lblNomeDoDiscoVar.setText("null");
 
+        jButton2.setText("Relatorio");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -134,10 +145,6 @@ public class Screen1 extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(lblCopyr)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -193,7 +200,13 @@ public class Screen1 extends javax.swing.JFrame {
                                 .addComponent(lblAlertaMemFixa)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(lblAlertaMem)))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(lblCopyr)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -252,6 +265,8 @@ public class Screen1 extends javax.swing.JFrame {
                         .addGap(33, 33, 33)
                         .addComponent(lblCopyr))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButton2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton1)
                         .addContainerGap())))
         );
@@ -259,11 +274,30 @@ public class Screen1 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+  
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
+ 
+  
+       
     ControleComponente controle1 = new ControleComponente();
     ControleJDBC controleBD1 = new ControleJDBC();
+    
+
+ 
    
+//    //lblUsoDiskMinVar.setText(controle1.getUsoMinDisco().toString());
+//    //lblUsoDiskVar.setText(controle1.getUsoMaxDisco().toString());
+//    //lblUsoMemMinVar.setText(controle1.getUsoMinRam().toString());
+//    //lblUsoMemVar.setText(controle1.getUsoMaxRam().toString());
+    
+  
+    
+    
+   timer = new Timer(0, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+                System.out.println("FUNFOU");
+                
     prgProc.setValue(controle1.getUsoAtualCpu().intValue());
     prgDisk.setValue(controle1.getUsoAtualDisco().intValue());
     prgMem.setValue(controle1.getPorcentagemUsoRam().intValue());
@@ -271,28 +305,21 @@ public class Screen1 extends javax.swing.JFrame {
     lblUsoCpuMinVar.setText(controle1.getIdentificadorDaCpu());
     lblUsoDiskVar.setText(controle1.getDiscoEmUsoAtual().toString());
     lblNomeDoDiscoVar.setText(controle1.getNomeDoDisco());
-   
-    //lblUsoDiskMinVar.setText(controle1.getUsoMinDisco().toString());
-    //lblUsoDiskVar.setText(controle1.getUsoMaxDisco().toString());
-    //lblUsoMemMinVar.setText(controle1.getUsoMinRam().toString());
-    //lblUsoMemVar.setText(controle1.getUsoMaxRam().toString());
     
-  
+    
     lblIdMaqVar.setText(controle1.getIdentificacaoMaquina());
     lblDataCapturaVar.setText(controle1.getDataDaCaptura());
-    //lblDataCapturaVar.setText(contr);
-    /* minhas metricas de alerta:
-    70> Extremo
-    50 - 69 - Moderado
-    0 - 49 - Estável
-    */
+//    //lblDataCapturaVar.setText(contr);
+//    /* minhas metricas de alerta:
+//    70> Extremo
+//    50 - 69 - Moderado
+//    0 - 49 - Estável
+//    */
     lblAlertaCPU.setText(controle1.getNivelDeAlertaCpu());
     lblAlertaDisk.setText(controle1.getNivelDeAlertaDisco());
     lblAlertaMem.setText(controle1.getNivelDeAlertaRam());
     lblDica.setText(controle1.getListaDeDicas());
-    
-    
-   
+                   
         try {
             controleBD1.inserirNoBd();
         } catch (ClassNotFoundException ex) {
@@ -300,16 +327,42 @@ public class Screen1 extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(Screen1.class.getName()).log(Level.SEVERE, null, ex);
         }
+            }
+        });
+        timer.setRepeats(true);
+        timer.setDelay(17);
+        timer.start();
+       
         
  
     
       
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+   
+    new ScreenRelatorio().setVisible(true);
+ 
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+//    public void atualizarComponentes() {
+//        timer = new Timer(0, new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent evt) {
+//
+//            }
+//        });
+//        timer.setRepeats(true);
+//        timer.setDelay(17);
+//        timer.start();
+//    }
+    
     /**
      * @param args the command line arguments
      */
     public void monitoramento() { 
+       
        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -336,6 +389,7 @@ public class Screen1 extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+           
             public void run() {
                 new Screen1().setVisible(true);
             }
@@ -344,6 +398,7 @@ public class Screen1 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

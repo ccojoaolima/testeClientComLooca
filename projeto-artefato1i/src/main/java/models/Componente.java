@@ -8,10 +8,12 @@ package models;
 import com.github.britooo.looca.api.core.Looca;
 import com.github.britooo.looca.api.group.discos.Disco;
 import com.github.britooo.looca.api.group.discos.DiscosGroup;
+import com.mycompany.projeto.artefato1i.ScreenRelatorio;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import javax.swing.JLabel;
 
 import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -50,6 +52,10 @@ public class Componente {
  
   private Date data1 = new Date(); 
 
+  List<Integer> relatorioValoresProc = new ArrayList<>();
+  List<Double> relatorioValoresDisco = new ArrayList<>();
+  List<Double> relatorioValoresRam = new ArrayList<>();
+   
   ArrayList <Integer> historicoValoresProc  = new ArrayList();
   //ArrayList <Integer> historicoValoresDisk = new ArrayList();
   //ArrayList <Integer> historicoValoresMem = new ArrayList();*/
@@ -64,6 +70,7 @@ public class Componente {
     public Double getUsoCpuAtual(){
     usoCpuAtual = looca1.getProcessador().getUso();
     usoPorcentagemCpuAtual = usoCpuAtual.intValue();
+    relatorioValoresProc.add(usoPorcentagemCpuAtual);
     return this.usoPorcentagemCpuAtual.doubleValue();
     }
     
@@ -87,7 +94,7 @@ public class Componente {
      
      usoDiscoAtual = tamanhoDiscoBytes - gigabytesDeEscrita;
      porcentagemUsoDisco = (usoDiscoAtual * 100 )/ tamanhoDiscoBytes;
-     
+     relatorioValoresDisco.add(porcentagemUsoDisco);
      /*System.out.println("Giga bytes de escrita: " + gigabytesDeEscrita);
      System.out.println("Tamanho disco " + tamanhoDiscoBytes);
      System.out.println("Uso DISCO ATUAL " + usoDiscoAtual);*/
@@ -128,6 +135,7 @@ public class Componente {
     
     public Double getPorcentagemUsoRam(){
     porcentagemUsoRam = (getUsoRamAtual() * 100) / getUsoMaxRam();
+    relatorioValoresRam.add(porcentagemUsoRam);
     return this.porcentagemUsoRam;
     }
     
@@ -222,10 +230,14 @@ public class Componente {
     }
     return this.nomeDoDisco; 
     }
+  
     
     
     
-  }
+    }
+    
+    
+  
   
     
     
