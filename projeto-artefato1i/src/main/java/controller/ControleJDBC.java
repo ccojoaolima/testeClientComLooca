@@ -46,10 +46,13 @@ public class ControleJDBC {
         String passwd = senha;
 
         try {
-            String url = "jdbc:mysql://" + server + ":" + port + "/" + database;
+            String url = "jdbc:sqlserver://serverpaymoon.database.windows.net:1433;"
+                    + "database=paymoon;user=paymoon@serverpaymoon;password=#Gfgrupo2;"
+                    + "encrypt=true;trustServerCertificate=false;"
+                    + "hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
 
             // Abre-se a conexão com o Banco de Dados
-            Connection con = DriverManager.getConnection(url, user, passwd);
+            Connection con = DriverManager.getConnection(url);
 
             // Cria-se Statement com base na conexão con
             Statement stmt = con.createStatement();
@@ -79,10 +82,12 @@ public class ControleJDBC {
         String passwd = senha;
 
         try {
-            String url = "jdbc:mysql://" + server + ":" + port + "/" + database;
+            String url = "jdbc:sqlserver://serverpaymoon.database.windows.net:1433;"
+                    + "database=paymoon;user=paymoon@serverpaymoon;password=#Gfgrupo2;encrypt=true;"
+                    + "trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;";
 
             // Abre-se a conexÃ£o com o Banco de Dados
-            Connection con = DriverManager.getConnection(url, user, passwd);
+            Connection con = DriverManager.getConnection(url);
 
             // Cria-se Statement com base na conexÃ£o con
             Statement stmt = con.createStatement();
